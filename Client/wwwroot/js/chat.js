@@ -1,3 +1,5 @@
+// Below code is similar to Document Ready in jQuery:
+
 document.addEventListener("DOMContentLoaded", () => {
 
 	// <snippet_Connection>
@@ -52,8 +54,11 @@ document.addEventListener("DOMContentLoaded", () => {
 		const li =
 			document.createElement("li");
 
-		li.textContent =
-			`${fullName}: ${message}`;
+		//li.textContent =
+		//	`<b>${fullName}:</b> ${message}`;
+
+		li.innerHTML =
+			`<b>${fullName}:</b> ${message}`;
 
 		document.getElementById("messageList").appendChild(li);
 
