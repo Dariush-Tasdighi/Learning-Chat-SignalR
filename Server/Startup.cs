@@ -8,6 +8,10 @@ namespace Server
 	{
 		public const string MyAllowSpecificOrigins = "MyAllowSpecificOrigins";
 
+		public Startup() : base()
+		{
+		}
+
 		public void ConfigureServices
 			(Microsoft.Extensions.DependencyInjection.IServiceCollection services)
 		{
@@ -23,7 +27,7 @@ namespace Server
 					builder =>
 					{
 						builder
-							.WithOrigins("https://localhost:44356")
+							.WithOrigins("https://localhost:44356", "https://googooli.ir")
 							.AllowAnyHeader()
 							.AllowAnyMethod()
 							.AllowCredentials() // In SignalR is important!
@@ -53,7 +57,7 @@ namespace Server
 			app.UseEndpoints(endpoints =>
 			{
 				// using Microsoft.AspNetCore.Builder;
-				endpoints.MapHub<Hubs.ChatHub>("/chathub");
+				endpoints.MapHub<Hubs.ChatHub>(pattern: "/chathub");
 			});
 		}
 	}

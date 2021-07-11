@@ -3,8 +3,12 @@ using Microsoft.Extensions.Hosting;
 
 namespace Client
 {
-	public class Program
+	public class Program : object
 	{
+		public Program() : base()
+		{
+		}
+
 		public static void Main(string[] args)
 		{
 			// using Microsoft.Extensions.Hosting;

@@ -60,7 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		li.innerHTML =
 			`<b>${fullName}:</b> ${message}`;
 
-		document.getElementById("messageList").appendChild(li);
+		//document.getElementById("messageList").appendChild(li);
+		document.getElementById("messageList").prepend(li);
 
 	});
 	// </snippet_ReceiveMessage>
