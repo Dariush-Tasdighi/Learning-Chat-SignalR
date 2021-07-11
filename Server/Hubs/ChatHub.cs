@@ -16,5 +16,15 @@ namespace Server.Hubs
 			// using Microsoft.AspNetCore.SignalR;
 			await Clients.All.SendAsync("ReceiveMessage", fullName, message);
 		}
+
+		public override System.Threading.Tasks.Task OnConnectedAsync()
+		{
+			return base.OnConnectedAsync();
+		}
+
+		public override System.Threading.Tasks.Task OnDisconnectedAsync(System.Exception exception)
+		{
+			return base.OnDisconnectedAsync(exception);
+		}
 	}
 }
